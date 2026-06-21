@@ -71,7 +71,7 @@ print(round(pred, 0))
 plot(y, xlim = c(2000, 2030), ylim = c(min(y), max(pred[, "upr"]) * 1.05),
      main = "Interval GDP forecast (trend-seasonal model)",
      ylab = "GDP", lwd = 2)
-fc_time <- time(ts(rep(NA, h), start = c(2026, 2), frequency = 4))
+fc_time <- as.numeric(time(ts(rep(NA, h), start = c(2026, 2), frequency = 4)))
 lines(fc_time, pred[, "fit"], col = "red",  lwd = 2)
 lines(fc_time, pred[, "lwr"], col = "blue", lty = 2)
 lines(fc_time, pred[, "upr"], col = "blue", lty = 2)
